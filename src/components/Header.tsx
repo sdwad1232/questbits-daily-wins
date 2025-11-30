@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Trophy, Globe } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import { Button } from './ui/button';
 import {
   DropdownMenu,
@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
+import { ThemeToggle } from './ThemeToggle';
 import questbitsIcon from '@/assets/questbits-icon.png';
 
 export function Header() {
@@ -31,21 +32,25 @@ export function Header() {
           </div>
         </div>
         
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" aria-label={t('settings.language')}>
-              <Globe className="h-5 w-5" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => changeLanguage('en')}>
-              🇬🇧 {t('settings.english')}
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => changeLanguage('nb')}>
-              🇳🇴 {t('settings.norwegian')}
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label={t('settings.language')}>
+                <Globe className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                🇬🇧 {t('settings.english')}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => changeLanguage('nb')}>
+                🇳🇴 {t('settings.norwegian')}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
   );

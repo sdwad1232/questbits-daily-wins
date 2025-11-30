@@ -2,6 +2,9 @@ export interface Habit {
   id: string;
   name: string;
   createdAt: string;
+  currentStreak: number;
+  longestStreak: number;
+  lastLoggedDate?: string;
 }
 
 export interface LogEntry {

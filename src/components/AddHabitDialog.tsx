@@ -41,6 +41,8 @@ export function AddHabitDialog() {
         id: crypto.randomUUID(),
         name: name.trim(),
         createdAt: new Date().toISOString(),
+        currentStreak: 0,
+        longestStreak: 0,
       },
     });
 
