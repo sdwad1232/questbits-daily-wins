@@ -1,0 +1,47 @@
+{
+  "app": {
+    "title": "QuestBits",
+    "tagline": "daglige oppdrag, små seire"
+  },
+  "dashboard": {
+    "title": "Dine Oppdrag",
+    "points": "Poeng",
+    "level": "Nivå",
+    "addHabit": "Legg til Nytt Oppdrag",
+    "noHabits": "Ingen oppdrag ennå. Legg til ditt første oppdrag for å komme i gang!",
+    "maxHabits": "Maksimum 10 oppdrag nådd"
+  },
+  "habit": {
+    "log": "Logg",
+    "logged": "Logget!",
+    "delete": "Slett",
+    "confirmDelete": "Er du sikker på at du vil slette dette oppdraget?",
+    "name": "Oppdragsnavn",
+    "placeholder": "Skriv inn oppdragsnavn...",
+    "add": "Legg til Oppdrag",
+    "cancel": "Avbryt"
+  },
+  "badges": {
+    "title": "Dine Merker",
+    "earned": "Opptjent",
+    "locked": "Låst",
+    "viewBadges": "Vis Merker",
+    "bronze": "Bronse Bit",
+    "bronzeDesc": "Oppnå 50 poeng",
+    "silver": "Sølv Bit",
+    "silverDesc": "Oppnå 150 poeng",
+    "gold": "Gull Bit",
+    "goldDesc": "Oppnå 300 poeng"
+  },
+  "chart": {
+    "title": "30-Dagers Fremgang",
+    "habitsLogged": "Vaner Logget",
+    "day": "Dag"
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "language": "Språk",
+    "english": "Engelsk",
+    "norwegian": "Norsk"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "QuestBits - Daily Habit Tracker",
+  "short_name": "QuestBits",
+  "description": "Track micro-habits, complete daily quests, and earn rewards. Daily quests, tiny wins.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F8FA",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "lifestyle", "health"],
+  "screenshots": []
+}

@@ -1,0 +1,47 @@
+{
+  "app": {
+    "title": "QuestBits",
+    "tagline": "daily quests, tiny wins"
+  },
+  "dashboard": {
+    "title": "Your Quests",
+    "points": "Points",
+    "level": "Level",
+    "addHabit": "Add New Quest",
+    "noHabits": "No quests yet. Add your first quest to get started!",
+    "maxHabits": "Maximum 10 quests reached"
+  },
+  "habit": {
+    "log": "Log",
+    "logged": "Logged!",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this quest?",
+    "name": "Quest name",
+    "placeholder": "Enter quest name...",
+    "add": "Add Quest",
+    "cancel": "Cancel"
+  },
+  "badges": {
+    "title": "Your Badges",
+    "earned": "Earned",
+    "locked": "Locked",
+    "viewBadges": "View Badges",
+    "bronze": "Bronze Bit",
+    "bronzeDesc": "Earn 50 points",
+    "silver": "Silver Bit",
+    "silverDesc": "Earn 150 points",
+    "gold": "Gold Bit",
+    "goldDesc": "Earn 300 points"
+  },
+  "chart": {
+    "title": "30-Day Progress",
+    "habitsLogged": "Habits Logged",
+    "day": "Day"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "english": "English",
+    "norwegian": "Norwegian"
+  }
+}
