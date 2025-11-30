@@ -2,4 +2,13 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
+// Register service worker for PWA (simplified)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+      .then(() => console.log('SW registered'))
+      .catch((err) => console.error('SW registration failed:', err));
+  });
+}
+
 createRoot(document.getElementById("root")!).render(<App />);
