@@ -13,7 +13,11 @@ function appReducer(state: AppState, action: AppAction): AppState {
     case 'ADD_HABIT':
       return {
         ...state,
-        habits: [...state.habits, action.payload]
+        habits: [...state.habits, { 
+          ...action.payload, 
+          currentStreak: 0, 
+          longestStreak: 0 
+        }]
       };
     
     case 'DELETE_HABIT':
@@ -32,10 +36,35 @@ function appReducer(state: AppState, action: AppAction): AppState {
         return state; // Already logged today
       }
       
+      // Calculate streak
+      const habit = state.habits.find(h => h.id === action.payload.habitId);
+      if (!habit) return state;
+      
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayStr = yesterday.toISOString().split('T')[0];
+      
+      const loggedYesterday = state.logs.some(
+        l => l.habitId === action.payload.habitId && l.date === yesterdayStr
+      );
+      
+      const newStreak = loggedYesterday ? habit.currentStreak + 1 : 1;
+      const newLongestStreak = Math.max(newStreak, habit.longestStreak);
+      
       return {
         ...state,
         logs: [...state.logs, action.payload],
-        points: state.points + 10
+        points: state.points + 10,
+        habits: state.habits.map(h =>
+          h.id === action.payload.habitId
+            ? {
+                ...h,
+                currentStreak: newStreak,
+                longestStreak: newLongestStreak,
+                lastLoggedDate: action.payload.date
+              }
+            : h
+        )
       };
     }
     

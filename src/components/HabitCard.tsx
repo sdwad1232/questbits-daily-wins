@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Trash2, CheckCircle2 } from 'lucide-react';
+import { Trash2, CheckCircle2, Flame } from 'lucide-react';
 import { Habit } from '@/types';
 import { useApp } from '@/context/AppContext';
 import { getTodayDate, wasLoggedOnDate } from '@/lib/dateUtils';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
+import { Badge } from './ui/badge';
 import { toast } from '@/hooks/use-toast';
 
 interface HabitCardProps {
@@ -50,7 +51,20 @@ export function HabitCard({ habit }: HabitCardProps) {
     <Card className="p-4 hover:shadow-md transition-shadow">
       <div className="flex items-center justify-between gap-4">
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-foreground truncate">{habit.name}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="font-semibold text-foreground truncate">{habit.name}</h3>
+            {habit.currentStreak > 0 && (
+              <Badge variant="outline" className="bg-accent/10 text-accent border-accent/20 gap-1">
+                <Flame className="w-3 h-3" />
+                {habit.currentStreak}
+              </Badge>
+            )}
+          </div>
+          {habit.longestStreak > 2 && (
+            <p className="text-xs text-muted-foreground mt-1">
+              Lengste streak: {habit.longestStreak} dager
+            </p>
+          )}
         </div>
         
         <div className="flex items-center gap-2">
